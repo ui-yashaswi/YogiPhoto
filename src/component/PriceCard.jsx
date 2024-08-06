@@ -5,7 +5,7 @@ import { PiCalendarHeart } from "react-icons/pi";
 
 function PriceCard() {
   return (
-    <div className="max-w-sm rounded overflow-hidden shadow-lg hover:bg-slate-100  bg-white">
+    <div className="max-w-sm rounded overflow-hidden shadow-lg hover:bg-slate-100  ">
       <div className="relative">
         <img
           src={cardImg}
