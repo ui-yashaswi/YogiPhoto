@@ -8,13 +8,13 @@ import Para from "./Para";
 import Blog from "./Blog";
 import Navsm from "./Navsm";
 import Footer from "./Footer";
-
+import HorizontalCarousel from "../component/HorizontalCarousel";
+import HoverCard from "../component/HoverCard";
 
 function Home() {
   return (
     <div>
       <Navsm />
-
       <div
         className="relative h-[100vh] lg:h-screen w-full bg-cover bg-fi bg-center "
         style={{ backgroundImage: `url(${homeBg})` }}
@@ -43,13 +43,14 @@ function Home() {
           </div>
         </div>
       </div>
-
       <About />
       <Gallery />
       <Price />
-      <Para />
+      {/* <HoverCard /> */}
+      <HorizontalCarousel />
       <Blog />
-      <Footer/>
+      <Para />
+      <Footer />
     </div>
   );
 }

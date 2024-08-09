@@ -1,13 +1,12 @@
-import React from 'react'
-import PriceCard from '../component/PriceCard';
+import React from "react";
+import PriceCard from "../component/PriceCard";
 
 function Price() {
   return (
     <div className="flex flex-col py-20 lg:px-16 px-[15px]">
       <div className=" w-full h-full flex lg:flex-row flex-col justify-between items-center">
-        
         <div className=" w-full justify-center lg:items-start items-center flex flex-col gap-5 py-10 lg:py-20">
-          <h1 className="text-zinc-800 font-bold text-4xl">
+          <h1 className="text-zinc-800 font-bold text-5xl">
             Services & Pricing
           </h1>
 
@@ -27,22 +26,13 @@ function Price() {
       </div>
 
       <div className="flex justify-between  lg:gap-0 gap-10 lg:flex-row flex-col">
-
         <PriceCard />
         <PriceCard />
         <PriceCard />
         <PriceCard />
-
       </div>
-
-      <h1 className='mt-20  text-center text-zinc-800 text-lg lg:px-80'>
-        Duis mattis quam quis quam cursus, a rutrum ante luctus. Phasellus porta
-        ornare enim ac euismod. Nulla fringilla lectus ac tincidunt viverra a
-        accumsan sapien mollis.
-      </h1>
-
     </div>
   );
 }
 
-export default Price
+export default Price;

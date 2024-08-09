@@ -15,8 +15,7 @@ function Para() {
       }}
     >
       <div className="absolute inset-0 flex w-full h-full flex-col gap-10 items-center justify-center bg-black bg-opacity-80 text-white">
-
-        <img src={ t1 } className="h-28 w-28  rounded-full" alt="" />
+        <img src={t1} className="h-28 w-28  rounded-full" alt="" />
 
         <div className=" flex flex-col items-center gap-5">
           <h1 className="text-white text-2xl italic lg:w-[60vw] text-center">

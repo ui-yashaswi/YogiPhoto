@@ -1,11 +1,34 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import logo from "/images/logo.png";
 import { Link } from "react-router-dom";
 
 function Navbar() {
+  const [showNavbar, setShowNavbar] = useState(true);
+  const [lastScrollTop, setLastScrollTop] = useState(0);
+
+  const handleScroll = () => {
+    const currentScrollTop = window.pageYOffset;
+    if (currentScrollTop > lastScrollTop) {
+      // Scrolling down
+      setShowNavbar(false);
+    } else {
+      // Scrolling up
+      setShowNavbar(true);
+    }
+    setLastScrollTop(currentScrollTop <= 0 ? 0 : currentScrollTop); // For Mobile or negative scrolling
+  };
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [lastScrollTop]);
   return (
-    <div className=" w-full h-20 bg-white lg:flex hidden justify-between items-center lg:px-16 px-[1px] fixed z-10 top-0 left-0 drop-shadow">
-      
+    <div
+      className={` w-full h-20 ${
+        showNavbar ? "bg-white" : "backdrop-blur-lg shadow-lg "
+      } lg:flex hidden justify-between items-center duration-1000  lg:px-16 px-[1px] fixed z-10 top-0 left-0 drop-shadow`}
+    >
       <div className="lg:flex items-center hidden ">
         <img className="w-16  object-cover " src={logo} alt="" />
         <div className="flex flex-col">
@@ -36,18 +59,6 @@ function Navbar() {
         >
           Portfolio
         </Link>
-        {/* <Link
-          to={"/uhuyjhg"}
-          className="hover:text-[#08c1b8] hover:tracking-[2px] duration-500 p-2 "
-        >
-          Services
-        </Link>
-        <Link
-          to={"/ssdasdsda"}
-          className="hover:text-[#08c1b8] hover:tracking-[2px] duration-500 p-2 "
-        >
-          Contact
-        </Link> */}
       </div>
     </div>
   );
